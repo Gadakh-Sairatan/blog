@@ -1,0 +1,664 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  color: #222;
+  padding-top: 10%;
+  background-color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 1;
+}
+
+main {
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  background-color: white;
+  width: 100%;
+  padding: 10px 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+header a.logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo-img {
+  height: 60px;
+  width: auto;
+}
+
+header nav {
+  display: flex;
+  gap: 24px;
+}
+
+header nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+  color: black;
+}
+
+header nav a:hover {
+  color: #ff4500;
+  font-weight: bold;
+}
+
+
+/* posts css  */
+div.post {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 700px) {
+  div.post {
+    grid-template-columns: .9fr 1.1fr;
+  }
+}
+
+div.post div.texts h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+div.post div.texts a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.post:hover {
+  transform: scale(1.02);
+}
+
+div.post p.info {
+  margin: 24px 0;
+  color: #888;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+}
+
+div.post p.info a.author {
+  color: #333;
+}
+
+div.post p.summary {
+  margin: 10px 0;
+  line-height: 1.8rem;
+}
+
+
+/* Login and Register css  */
+
+form.login {
+  /* margin: 0 auto; */
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 350px;
+  background: linear-gradient(135deg, black 50%, white 50%);
+
+}
+
+form.register {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 350px;
+  background: linear-gradient(135deg, white 50%, black 50%);
+}
+
+input {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+button {
+  cursor: pointer;
+  width: 100%;
+  background-color: green;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+form.login h1 {
+  text-align: center;
+  color: white;
+}
+
+form.register h1 {
+  text-align: center;
+}
+
+
+
+/* post page css  */
+div.post-page div.image {
+  max-height: 300px;
+  display: flex;
+  overflow: hidden;
+  opacity: 1;
+}
+
+div.post-page div.image img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+}
+
+div.post-page a {
+  color: #333;
+  text-decoration: underline;
+}
+
+div.post-page h1 {
+  text-align: center;
+  margin: 10px 0 5px;
+}
+
+div.post-page time {
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+  color: #aaa;
+  margin: 10px 0;
+}
+
+div.post-page div.author {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+div.content p {
+  line-height: 1.7rem;
+  margin: 30px 0;
+}
+
+div.content li {
+  margin-bottom: 10px;
+}
+
+div.edit-row {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+div.post-page a.edit-btn {
+  background-color: #333;
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.delete-btn {
+  margin: 0;
+  margin-left: 10px;
+  background-color: red;
+  display: inline-flex;
+  width: 150px;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  justify-content: center;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+a svg {
+  height: 20px;
+}
+
+
+/* Post.js  css  */
+.post-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Post Title */
+.post-page h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Post Date */
+.post-page time {
+  font-size: 14px;
+  color: gray;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Post Author */
+.author {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Edit & Delete Buttons */
+.edit-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+}
+
+/* Post Content */
+.content {
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Back Button (Now at Bottom) */
+.back-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* Create Post Page - Popup Window */
+.popup-container {
+  width: 70%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Inputs, Buttons, and Quill Editor */
+.popup-container input,
+.popup-container textarea,
+.popup-container .quill {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Limit textarea height */
+.popup-container textarea {
+  max-height: 150px;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+/* Button at the Bottom */
+.popup-container .button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+.popup-container button {
+  width: 100%;
+  background: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-container button:hover {
+  background: darkgreen;
+}
+
+
+
+
+/* FOOTER */
+.footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  padding: 20px 100px;
+  text-align: center;
+  font-size: 14px;
+
+  width: 100%;
+  position: absolute;
+  bottom: 1;
+  left: 0;
+}
+
+.footer-tagline {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.footer-social svg {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-social svg:hover {
+  color: #38bdf8;
+}
+
+.footer-sections {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  text-align: left;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-column p:hover {
+  color: #ffffff;
+}
+
+.footer-line {
+  border: 0;
+  height: 1px;
+  background-color: #374151;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+
+
+/* MyBlogs.js  css  */
+.my-blogs {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading */
+.my-blogs h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* No Blogs Message */
+.no-blogs {
+  font-size: 18px;
+  color: #777;
+}
+
+/* Blog Card */
+.blog-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Blog Image */
+.blog-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Blog Title */
+.blog-title {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 22px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Blog Summary */
+.blog-summary {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+/* Dropdown Css */
+
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-img {
+  height: 40px;
+}
+
+/* Navigation Links */
+.nav-link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* User Icon */
+.user-icon {
+  margin-right: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 160px;
+  padding: 8px 0;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown Item */
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+/* Logout Styling */
+.logout {
+  color: red;
+}
